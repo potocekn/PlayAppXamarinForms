@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             x:Class="PlayApp.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="DarkBlue" Padding="24" CornerRadius="0" x:Name="Frame1">
+            <Label Text="Welcome to Dummy Play Song App!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36" x:Name="Label1"/>
+        </Frame>
+        <Label Text="CheckBox test (color of frame)" FontSize="Title" Padding="30,10,30,10"/>
+        <StackLayout>
+            <Label Text="Check for Aqua color:" Padding="30,0,0,0" FontSize="20" />
+            <CheckBox x:Name="checkboxAqua" Color="Aqua" CheckedChanged="OnCheckedChangeBlue" Margin="380,-30,0,0"/>
+         </StackLayout>
+        <ListView>
+            <ListView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Hello</x:String>
+                    <x:String>World</x:String>
+                </x:Array>
+            </ListView.ItemsSource>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding}" Margin="50,10,0,0" FontSize="20"/>
+                            <CheckBox IsChecked="False" CheckedChanged="OnCheckedChanged" HorizontalOptions="EndAndExpand" Color="Gray" Margin="70,0,0,0"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
+    </StackLayout>
+
+</ContentPage>
